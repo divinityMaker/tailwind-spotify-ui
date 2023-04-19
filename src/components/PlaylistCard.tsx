@@ -1,3 +1,4 @@
+import { Play } from "lucide-react";
 import Image from "next/image";
 
 interface IPlaylistCard {
@@ -15,7 +16,7 @@ const PlaylistCard: React.FC<IPlaylistCard> = ({
 }) => {
   return (
     <a
-      className={`
+      className={`  
             cursor-pointer
             bg-white/5
             group
@@ -24,23 +25,30 @@ const PlaylistCard: React.FC<IPlaylistCard> = ({
             transition-colors
             hover:bg-white/10
             ${horizontal ? "items-center" : ""}
-            ${horizontal ? "pr-4" : "p-3"}
+            ${horizontal ? "pr-4" : "p-4"}
             ${horizontal ? "rounded" : "rounded-md"}
             ${horizontal ? "gap-4" : "gap-2"}
             ${horizontal ? "flex-row" : "flex-col"}
-            ${horizontal ? "max-h-[4.5rem]" : ''}
+            ${horizontal ? "max-h-[4.5rem]" : ""}
         `}
     >
       <Image
-        src="/golden_hour.jpg"
-        width={`${horizontal ? "72" : "120"}`}
-        height={`${horizontal ? "72" : "120"}`}
+        src={`${image ? image : "/golden_hour.jpg"}`}
+        width={`${horizontal ? "72" : "180"}`}
+        height={`${horizontal ? "72" : "180"}`}
         alt="Álbum image"
-        className={`${horizontal ? '' : 'w-full'}`}
+        className={`
+          ${horizontal ? "" : "rounded"}
+        `}
       />
       <strong className="font-semibold">{title}</strong>
-      {/* Máximo de 45 caracteres */}
-      {!horizontal && <span className="text-sm text-zinc-400">JVKE</span>}
+      {horizontal ? (
+        <button className="invisible 2xl:group-hover:visible w-12 h-12 flex items-center justify-center pl-1 rounded-full bg-green-400 text-black ml-auto mr-4">
+          <Play className="fill-black" size={20} />
+        </button>
+      ) : (
+        <span className="text-sm text-zinc-400">{artists ? artists : "JVKE"}</span>
+      )}
     </a>
   );
 };

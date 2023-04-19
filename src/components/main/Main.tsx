@@ -1,7 +1,5 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import React from "react";
-import MadeFor from "./MadeFor";
-import RecentTracks from "./RecentPlayed";
 import PlaylistCard from "../PlaylistCard";
 
 const Main: React.FC = () => {
@@ -22,14 +20,14 @@ const Main: React.FC = () => {
         <PlaylistCard title="this is what falling in love fells like" horizontal/>
         <PlaylistCard title="this is what falling in love fells like" horizontal/>
         <PlaylistCard title="this is what falling in love fells like" horizontal/>
-        <RecentTracks />
-        <RecentTracks />
-        <RecentTracks />
+        <PlaylistCard title="this is what falling in love fells like" horizontal/>
+        <PlaylistCard title="this is what falling in love fells like" horizontal/>
+        <PlaylistCard title="this is what falling in love fells like" horizontal/>
       </div>
 
       <h2 className="font-semibold text-3xl mt-10">Made for Gabriel Maker</h2>
 
-      <div className="grid grid-cols-3 md:grid-cols-9 gap-4 mt-4">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-7 gap-4 mt-4">
         <PlaylistCard title="Daily Mix 1" />
         <PlaylistCard title="Daily Mix 2" />
         <PlaylistCard title="Daily Mix 3" />
